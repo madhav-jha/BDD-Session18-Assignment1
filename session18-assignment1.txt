@@ -1,0 +1,43 @@
+Create the table customer with two column families. Personal details and order details as column families. Create a unique number as row key (ssn/Aadhar no.,etc).Insert at least 10 records to each column. Insert following values for personal details column family Name, age, city, state. Insert following values for order details column family Order no., order quantity, and order amount.
+
+create 'customer','personal','order'
+
+1. Use put command to insert the values for each record. 
+
+put 'customer','100','personal:name','John'
+put 'customer','100','personal:age','21'
+put 'customer','100','personal:city','New York'
+put 'customer','100','personal:state','Georgia'
+put 'customer','100','order:order-no#','OD-10/22/2016'
+put 'customer','100','order:quantity','5'
+put 'customer','100','order:amount','5000'
+
+put 'customer','101','personal:fname','Jack'
+put 'customer','101','personal:age','23'
+put 'customer','101','personal:city','New Jersy'
+put 'customer','101','personal:state','Duluth'
+put 'customer','101','order:order-no#','OD-10/21/2016'
+put 'customer','101','order:quantity','4'
+put 'customer','101','order:amount','1000'
+
+put 'customer','102','personal:fname','Jenny'
+put 'customer','102','personal:age','27'
+put 'customer','102','personal:city','Washington'
+put 'customer','102','personal:state','Columbia'
+put 'customer','102','order:order-no#','OD-10/20/2016'
+put 'customer','102','order:quantity','7'
+put 'customer','102','order:amount','2100'
+
+put 'customer','103','personal:fname','Maria'
+put 'customer','103','personal:age','20'
+put 'customer','103','personal:city','Down Town'
+put 'customer','103','personal:state','Southampton'
+put 'customer','103','order:order-no#','OD-10/19/2016'
+put 'customer','103','order:quantity','9'
+put 'customer','103','order:amount','5400'
+
+4. Use get command, to retrieve all the records of a single customer.
+
+get 'customer','100'
+get 'customer','100','order'
+get 'customer','100','order:date'
